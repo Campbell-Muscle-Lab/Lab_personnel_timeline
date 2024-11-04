@@ -1,5 +1,6 @@
 function create_lab_personnel_chart
 
+addpath(genpath('../../MATLAB_Utilities'))
 data_file_string = '../data/lab_personnel_timeline.xlsx';
 output_file_string = '../output/lab_timeline.png';
 
