@@ -85,11 +85,15 @@ sp = initialise_publication_quality_figure( ...
 subplot(sp(1));
 image(im);
 
-x_ticks = 1 : 12 : size(im, 2)
+x_ticks = 1 : 12 : size(im, 2) + 1;
+x_ticks(2:end) = x_ticks(2:end) - 6; % First month is July so it counts 1 year from July-July which makes the display not pretty
+
+
 y_ticks = 1 : size(im,1);
 
 x_tick_labels = cellstr(datestr(begin_date + calmonths(x_ticks-1), ...
         'YYYY'))
+
 
 improve_axes( ...
     'x_axis_offset', 0, ...
